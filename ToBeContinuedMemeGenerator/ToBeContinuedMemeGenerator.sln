@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToBeContinuedMemeGenerator", "ToBeContinuedMemeGenerator\ToBeContinuedMemeGenerator.csproj", "{2AA3855E-F36B-4C17-A22F-5292808AAE9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AA3855E-F36B-4C17-A22F-5292808AAE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AA3855E-F36B-4C17-A22F-5292808AAE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AA3855E-F36B-4C17-A22F-5292808AAE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AA3855E-F36B-4C17-A22F-5292808AAE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39FF9CA3-405B-4110-8237-53556419E2B3}
+	EndGlobalSection
+EndGlobal
