@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Microsoft.Win32;
+using System.IO;
+using System.Windows;
 
 namespace ToBeContinuedMemeGenerator
 {
@@ -7,6 +9,13 @@ namespace ToBeContinuedMemeGenerator
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                PathTextBox.Text = openFileDialog.FileName;
         }
     }
 }
