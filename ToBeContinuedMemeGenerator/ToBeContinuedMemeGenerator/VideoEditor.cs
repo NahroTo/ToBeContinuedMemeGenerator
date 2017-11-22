@@ -1,13 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AviFile;
+using System;
+using System.Windows;
 
 namespace ToBeContinuedMemeGenerator
 {
     public class VideoEditor
     {
-        public void AddMusic(string )
+        public void Test()
+        {
+            string fileName = Helper.GetSafePath(@"./Assets/zoo.mp4");
+            if (fileName != null)
+            {
+                try
+                {
+                    AviManager aviManager = new AviManager(fileName, true);
+                    aviManager.AddAudioStream(Helper.GetSafePath(@"./Assets/zoo.mp4"), 0);
+                    aviManager.Close();
+                } catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+            }
+        }
     }
 }

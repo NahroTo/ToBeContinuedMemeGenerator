@@ -17,5 +17,11 @@ namespace ToBeContinuedMemeGenerator
             if (openFileDialog.ShowDialog() == true)
                 PathTextBox.Text = openFileDialog.FileName;
         }
+
+        private void BtnGenerate_Click(object sender, RoutedEventArgs e)
+        {
+            var videoEditor = new VideoEditor();
+            videoEditor.Test();
+        }
     }
 }
