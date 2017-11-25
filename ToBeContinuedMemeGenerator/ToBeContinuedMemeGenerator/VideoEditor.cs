@@ -1,25 +1,40 @@
-﻿using AviFile;
-using System;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 
 namespace ToBeContinuedMemeGenerator
 {
     public class VideoEditor
     {
-        public void Test()
+        private readonly string OutputFileName = "DankMeme";
+
+        public void MakeMeme(string inputPath, int offset, string outputFolderPath)
         {
-            string fileName = Helper.GetSafePath(@"./Assets/zoo.mp4");
-            if (fileName != null)
+            string songPath = Path.Combine(Directory.GetCurrentDirectory(), @"Assets/continued.mp3");
+            string outputPath = String.Format(@"{0}\{1}.mp4", outputFolderPath, OutputFileName);
+
+            string args = String.Format(
+                @"-i {0} -itsoffset {1} -i {2} -c copy {3}",
+                inputPath,
+                offset,
+                songPath,
+                outputPath);
+            try
             {
-                try
+                var process = new ProcessStartInfo
                 {
-                    AviManager aviManager = new AviManager(fileName, true);
-                    aviManager.AddAudioStream(Helper.GetSafePath(@"./Assets/zoo.mp4"), 0);
-                    aviManager.Close();
-                } catch (Exception e)
-                {
-                    MessageBox.Show(e.ToString());
-                }
+                    UseShellExecute = true,
+                    WorkingDirectory = @"C:\Windows\System32",
+                    FileName = @"C:\ffmpeg\bin\ffmpeg.exe",
+                    Verb = "runas",
+                    Arguments = args,
+                    // WindowStyle = ProcessWindowStyle.Hidden
+                };
+                Process.Start(process);
+            } catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
     }

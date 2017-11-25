@@ -5,34 +5,54 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Title="ToBeContinuedMemeGenerator" Height="200" Width="440"
+    Title="ToBeContinuedMemeGenerator" Height="210" Width="640"
     ResizeMode="CanMinimize">
     <StackPanel Margin="16">
         
-        <!-- Select video -->
+        <!-- Select input path -->
         <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Target Video:" />
             <TextBox
-                Name="PathTextBox"
-                Width="280"
-                IsReadOnly="True" />
-            <Button
-                Padding="8"
+                Name="InputPathTextBox"
                 Margin="8 0 0 0"
-                Name="BtnOpenFile"
-                Click="BtnOpenFile_Click"
-                Content="Select Video" />
+                Width="280"
+                IsReadOnly="True"/>
+            <Button
+                Margin="8 0 0 0"
+                Name="BtnInput"
+                Click="BtnInput_Click"
+                Content="Browse..." />
         </StackPanel>
         
         
-       <!-- Select start time -->
+        <!-- Select offset -->
         <StackPanel
             Orientation="Horizontal"
             Margin="0 8 0 0">
             <TextBlock Text="Starting Point:" />
             <TextBox
+                Name="OffsetTextBox"
                 Margin="8 0 0 0"
                 Width="40" />
         </StackPanel>
+
+        <!-- Select output path -->
+        <StackPanel
+            Orientation="Horizontal"
+            Margin="0 8 0 0">
+            <TextBlock Text="Output Destination Folder:" />
+            <TextBox
+                Name="OutputFolderTextBox"
+                Width="280"
+                Margin="8 0 0 0"
+                IsReadOnly="True" />
+            <Button
+                Margin="8 0 0 0"
+                Name="BtnOutput"
+                Click="BtnOutput_Click"
+                Content="Browse..." />
+        </StackPanel>
+
         <Button
             Name="BtnGenerate"
             Click="BtnGenerate_Click"

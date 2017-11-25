@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System.IO;
+﻿using System;
 using System.Windows;
 
 namespace ToBeContinuedMemeGenerator
@@ -11,17 +10,20 @@ namespace ToBeContinuedMemeGenerator
             InitializeComponent();
         }
 
-        private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
+        private void BtnInput_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                PathTextBox.Text = openFileDialog.FileName;
+            InputPathTextBox.Text = Utilities.SelectFilePath();
+        }
+
+        private void BtnOutput_Click(object sender, RoutedEventArgs e)
+        {
+            OutputFolderTextBox.Text = Utilities.SelectFolderPath();
         }
 
         private void BtnGenerate_Click(object sender, RoutedEventArgs e)
         {
             var videoEditor = new VideoEditor();
-            videoEditor.Test();
+            videoEditor.MakeMeme(InputPathTextBox.Text, Int32.Parse(OffsetTextBox.Text), OutputFolderTextBox.Text);
         }
     }
 }
