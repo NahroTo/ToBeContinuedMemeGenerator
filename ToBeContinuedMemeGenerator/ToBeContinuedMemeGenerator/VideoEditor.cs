@@ -26,7 +26,7 @@ namespace ToBeContinuedMemeGenerator
                 {
                     UseShellExecute = true,
                     WorkingDirectory = @"C:\Windows\System32",
-                    FileName = @"C:\ffmpeg\bin\ffmpeg.exe",
+                    FileName = @"ffmpeg.exe",
                     Verb = "runas",
                     Arguments = args,
                     // WindowStyle = ProcessWindowStyle.Hidden
